@@ -43,7 +43,7 @@ const app = Vue.createApp({
                 // display message
                 this.searching = true;
 
-                MAI
+                Kistu
                     .search(this.searchTerm)
                     .then(response => {
                         console.log('api response', response);
@@ -51,8 +51,8 @@ const app = Vue.createApp({
                         // store the items in data
                         //this.searchResults = response.data.items;
 
-                        if (response.data.items.length > 0) {
-                            this.searchResults = ShowCollectionFactory.createFromMyAnimeListAPI(response.data.items);
+                        if (response.data.data.length > 0) {
+                            this.searchResults = ShowCollectionFactory.createFromMyAnimeListAPI(response.data.data);
                         }
 
                         console.log(this.searchResults);

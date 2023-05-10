@@ -13,8 +13,7 @@ app.component('ShowListItem', {
 
     computed: {
         thumbnail() {
-            //TODO: fix API image Data
-            return this.item.volumeInfo.imageLinks?.thumbnail?.replace('&edge=curl', '');
+            return this.volumeInfo.coverImage?.tiny?.replace('&edge=curl', '');
         },
         favorite() {
             return this.favorites.contains(this.item);
@@ -49,8 +48,7 @@ app.component('ShowListItem', {
             
             <!-- BOOK THUMBNAIL -->
             <div class="book">
-            <!--TODO: fix API data-->
-                <img :src="thumbnail" :alt="item.volumeInfo.title" @click="displayDetails" class="thumbnail">
+                <img :src="thumbnail" :alt="item.volumeInfo.titles.en" @click="displayDetails" class="thumbnail">
                 <div role="toolbar" class="btn-toolbar">
                     <div role="group" class="btn-group">
                         <button @click="displayDetails" title="More Info" type="button" class="btn btn-secondary"><i class="fas fa-info-circle"></i></button> 

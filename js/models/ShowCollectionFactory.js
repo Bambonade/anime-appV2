@@ -4,9 +4,8 @@ class ShowCollectionFactory{
 
         volumes.forEach(item => {
             let newItem = false;
-            // TODO: fix API data info
-            switch(item.volumeInfo.printType.toLowerCase()){
-                case 'show':
+            switch(item.volumeInfo.showType.toLowerCase()){
+                case 'tv':
                     newItem = Object.assign(new Show(), item);
                     break;
                 case 'movie':
