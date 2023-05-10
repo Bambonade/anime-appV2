@@ -12,8 +12,8 @@ app.component('ShowListItem', {
     },
 
     computed: {
-        // TODO: eliminate this by using the thumbnail defined in the models
         thumbnail() {
+            //TODO: fix API image Data
             return this.item.volumeInfo.imageLinks?.thumbnail?.replace('&edge=curl', '');
         },
         favorite() {
@@ -49,6 +49,7 @@ app.component('ShowListItem', {
             
             <!-- BOOK THUMBNAIL -->
             <div class="book">
+            <!--TODO: fix API data-->
                 <img :src="thumbnail" :alt="item.volumeInfo.title" @click="displayDetails" class="thumbnail">
                 <div role="toolbar" class="btn-toolbar">
                     <div role="group" class="btn-group">

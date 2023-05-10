@@ -4,6 +4,7 @@ class ShowCollectionFactory{
 
         volumes.forEach(item => {
             let newItem = false;
+            // TODO: fix API data info
             switch(item.volumeInfo.printType.toLowerCase()){
                 case 'show':
                     newItem = Object.assign(new Show(), item);

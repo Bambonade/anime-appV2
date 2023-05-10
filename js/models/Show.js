@@ -4,12 +4,10 @@ class Show {
     get type(){
         return Show.type;
     }
-    //place API data here
-    volumeInfo = {
-
-    }
+    //TODO: place API data here
 
     get thumbnail(){
+        //TODO: get API data for images
         return null;
     }
 }

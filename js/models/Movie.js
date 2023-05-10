@@ -5,9 +5,10 @@ class Movie {
         return Movie.type;
     }
 
-    //place API data here
+    //TODO: place API data here
 
     get thumbnail(){
+        //TODO: API data for images
         return null;
     }
 }
