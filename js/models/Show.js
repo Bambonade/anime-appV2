@@ -1,12 +1,12 @@
 class Show {
-    static type = 'Show';
+    static modelName = 'Show';
 
-    get type(){
-        return Show.type;
+    get modelName(){
+        return Show.modelName;
     }
     //API DATA INFO
     id = '';
-    volumeInfo = {
+    attributes = {
         titles: {
             en: '',
             en_jp: '',
@@ -42,6 +42,6 @@ class Show {
     }
 
     get thumbnail(){
-        return this.volumeInfo.coverImage?.tiny?.replace('&edge=curl', '');
+        return this.attributes.posterImage.large.replace('&edge=curl', '');
     }
 }

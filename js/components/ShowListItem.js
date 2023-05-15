@@ -13,7 +13,7 @@ app.component('ShowListItem', {
 
     computed: {
         thumbnail() {
-            return this.volumeInfo.coverImage?.tiny?.replace('&edge=curl', '');
+            return this.item.attributes.posterImage.large.replace('&edge=curl', '');
         },
         favorite() {
             return this.favorites.contains(this.item);
@@ -21,6 +21,9 @@ app.component('ShowListItem', {
         bookmarked() {
             return this.bookmarks.contains(this.item);
         },
+        detailsComponent(){
+            return this.item.type + 'Details';
+        }
     },
 
     methods: {
@@ -46,9 +49,9 @@ app.component('ShowListItem', {
     template: `
         <div class="shelf col-sm-4 col-md-3 col-lg-2 col-6">
             
-            <!-- BOOK THUMBNAIL -->
-            <div class="book">
-                <img :src="thumbnail" :alt="item.volumeInfo.titles.en" @click="displayDetails" class="thumbnail">
+            <!-- SHOW THUMBNAIL -->
+            <div class="show">
+                <img :src="thumbnail" :alt="item.attributes.titles.en" @click="displayDetails" class="thumbnail">
                 <div role="toolbar" class="btn-toolbar">
                     <div role="group" class="btn-group">
                         <button @click="displayDetails" title="More Info" type="button" class="btn btn-secondary"><i class="fas fa-info-circle"></i></button> 
@@ -62,7 +65,7 @@ app.component('ShowListItem', {
                 </div>
             </div>
             
-            <bs-modal v-model="showDetails" :title="item.volumeInfo.title" hide-footer>
+            <bs-modal v-model="showDetails" :title="item.attributes.titles.en" hide-footer>
                 <component :is="detailsComponent" :item="item"></component>
                 Details coming soon!
             </bs-modal>

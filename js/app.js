@@ -33,7 +33,7 @@ const app = Vue.createApp({
             }
         },
 
-        // LOAD BOOKS
+        // LOAD SHOWS
         searchShows() {
             // prepare and perform search
             if (this.searchTerm) {
@@ -48,11 +48,8 @@ const app = Vue.createApp({
                     .then(response => {
                         console.log('api response', response);
 
-                        // store the items in data
-                        //this.searchResults = response.data.items;
-
                         if (response.data.data.length > 0) {
-                            this.searchResults = ShowCollectionFactory.createFromMyAnimeListAPI(response.data.data);
+                            this.searchResults = ShowCollectionFactory.createFromKitsu(response.data.data);
                         }
 
                         console.log(this.searchResults);
@@ -77,17 +74,6 @@ const app = Vue.createApp({
 
     //mounted:  called after the instance has been mounted,
     mounted: function () {
-        // if we have a list in local storage, replace the sample data
-        if (localStorage.getItem(this.localBookmarks)) {
-            // TODO: add localstorage
-            //this.bookmarks = PublicationCollectionFactory.createFromLocalStorage(JSON.parse(localStorage.getItem(this.localBookmarks)));
-        }
-
-        if (localStorage.getItem(this.localFavorites)) {
-            // TODO: add localstorage
-            //this.favorites = PublicationCollectionFactory.createFromLocalStorage(JSON.parse(localStorage.getItem(this.localFavorites)));
-        }
-
         // perform default search
         this.searchShows();
     },

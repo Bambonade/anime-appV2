@@ -9574,66 +9574,66 @@ nav .form-inline {
   text-align: center;
 }
 
-.book {
+.show {
   display: inline-block;
 }
-.book .thumbnail {
+.show .thumbnail {
   box-shadow: 2px 0px 1px 1px rgba(46, 20, 7, 0.5);
   border: 1px solid #2e1407;
 }
-.book .btn-toolbar {
+.show .btn-toolbar {
   display: none;
   justify-content: center;
   margin-top: -43px;
   margin-bottom: 5px;
 }
-.book .btn-toolbar .btn {
+.show .btn-toolbar .btn {
   background-color: rgba(90, 28, 5, 0.8);
   border-color: rgba(90, 28, 5, 0.9);
 }
-.book .btn-toolbar .btn:hover {
+.show .btn-toolbar .btn:hover {
   background-color: rgba(90, 28, 5, 0.9);
 }
-.book .btn-toolbar .btn:hover i {
+.show .btn-toolbar .btn:hover i {
   transform: scale(1.2);
 }
-.book:hover .thumbnail {
+.show:hover .thumbnail {
   cursor: pointer;
   transform: scale(1.05) translateY(-2.5%);
 }
-.book:hover .btn-toolbar {
+.show:hover .btn-toolbar {
   display: flex;
 }
 
-.book-details .modal-xl {
+.show .modal-xl {
   width: 95vw;
   max-width: none;
 }
-.book-details .modal-title {
+.show .modal-title {
   font-weight: bold;
   font-size: 1.5rem;
 }
-.book-details img {
+.show img {
   border: 2px solid #5a1c05;
   max-width: 250px;
 }
-.book-details dl {
+.show dl {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
   overflow: visible;
 }
-.book-details dl dt {
+.show dl dt {
   min-width: 110px;
   flex: 0 0 30%;
 }
-.book-details dl dd {
+.show dl dd {
   margin-left: auto;
   text-align: left;
   flex: 1 0 70%;
 }
 @media (max-width: 575.98px) {
-  .book-details .col-preview {
+  .show-details .col-preview {
     border-bottom: 2px solid #5A1C05;
     margin-bottom: 10px;
   }

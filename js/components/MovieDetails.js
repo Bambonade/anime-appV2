@@ -3,30 +3,26 @@ app.component('MovieDetails', {
         item: Object,
     },
     template:`
-        <div class="book-details container-fluid">
+        <div class="show-details container-fluid">
             <div class="row">
                 <div class="text-center col-preview col-sm-4">
-                    <img :src="item.thumbnail" :alt="item.volumeInfo.titles.en" class="img-fluid w-100"> 
-                    <a  v-if="item.accessInfo.webReaderLink" 
-                        :href="item.accessInfo.webReaderLink"
-                        rel="noopener" target="_blank" 
-                        class="btn m-2 btn-primary">Preview</a>
+                    <img :src="item.thumbnail" :alt="item.attributes.titles.en" class="img-fluid w-100"> 
                 </div>
                 <div class="text-left col-details col-sm-8">
                     <dl>
-<!--                        <template v-if="item.formattedPublicationDate">-->
-<!--                            <dt>Published</dt>-->
-<!--                            <dd>{{item.formattedPublicationDate}}</dd>-->
-<!--                        </template>-->
-<!--                        -->
-<!--                        <template v-if="item.volumeInfo.pageCount">-->
-<!--                            <dt>Pages</dt>-->
-<!--                            <dd>{{item.volumeInfo.pageCount}}</dd>-->
-<!--                        </template>-->
-<!--                        -->
-<!--                        <template v-if="item.volumeInfo.description">-->
+                        <template v-if="item.attributes.ratingRank">
+                            <dt>Rating Rank</dt>
+                            <dd>{{item.attributes.ratingRank}}</dd>
+                        </template>
+                        
+                        <template v-if="item.attributes.averageRating">
+                            <dt>Average Rating</dt>
+                            <dd>{{item.attributes.averageRating}}</dd>
+                        </template>
+                        
+<!--                        <template v-if="item.attributes.description">-->
 <!--                            <dt>Description</dt>-->
-<!--                            <dd>{{item.volumeInfo.description}}</dd>-->
+<!--                            <dd>{{item.attributes.description}}</dd>-->
 <!--                        </template>                                    -->
                     </dl>
                 </div>

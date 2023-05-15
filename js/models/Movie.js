@@ -1,13 +1,12 @@
 class Movie {
-    static type = 'Movie';
+    static modelName = 'Movie';
 
-    get type(){
-        return Movie.type;
+    get modelName(){
+        return Movie.modelName;
     }
 
-    //TODO: place API data here
     id = '';
-    volumeInfo = {
+    attributes = {
         titles: {
             en: '',
             en_jp: '',
@@ -43,7 +42,6 @@ class Movie {
     }
 
     get thumbnail(){
-        //TODO: API data for images
-        return this.volumeInfo.coverImage?.tiny?.replace('&edge=curl', '');
+        return this.attributes.posterImage.large.replace('&edge=curl', '');
     }
 }
