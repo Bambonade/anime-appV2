@@ -1,8 +1,8 @@
 app.component('ShowListItem', {
     props: {
-        favorites: {type: ShowCollection, required: true},
-        bookmarks: {type: ShowCollection, required: true},
-        item: {type: Object, required: true},
+        favorites: {modelType: ShowCollection, required: true},
+        bookmarks: {modelType: ShowCollection, required: true},
+        item: {modelType: Object, required: true},
     },
 
     data: function () {

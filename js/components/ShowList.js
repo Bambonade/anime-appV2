@@ -1,8 +1,8 @@
 app.component('ShowList', {
     props: {
-        collection: {type: ShowCollection},
-        favorites: {type: ShowCollection},
-        bookmarks: {type: ShowCollection},
+        collection: {modelType: ShowCollection},
+        favorites: {modelType: ShowCollection},
+        bookmarks: {modelType: ShowCollection},
     },
 
     template: `

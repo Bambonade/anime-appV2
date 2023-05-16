@@ -9,23 +9,23 @@ app.component('BsModal', {
 
     props: {
         title: {
-            type: String,
+            modelType: String,
             required: true
         },
         id : {
-            type: String,
+            modelType: String,
             default: 'modal-' + Math.floor(Math.random() * 10e16),
         },
         modelValue: {
-            type: Boolean,
+            modelType: Boolean,
             default: false,
         },
         hideHeader: {
-            type: Boolean,
+            modelType: Boolean,
             default: false,
         },
         hideFooter: {
-            type: Boolean,
+            modelType: Boolean,
             default: false,
         }
     },
