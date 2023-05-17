@@ -1,4 +1,3 @@
-//TODO: fix API
 class Kistu {
     static search(keyword, limit){
         let endpoint = 'https://kitsu.io/api/edge/anime'

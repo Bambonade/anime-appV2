@@ -1,6 +1,5 @@
 const router = new VueRouter({
     routes: [
-        //TODO: Create pages
-        // {path: '/' component:}
-    ]
-})
+        {path: '/', component: UserAuthentication}, //Account page
+    ],
+});

@@ -25,10 +25,10 @@ const app = Vue.createApp({
                     this.currentCollection = this.searchResults;
                     break;
                 case 'bookmarks':
-                    this.currentCollection = this.bookmarks;
+                    this.searchResults = this.bookmarks;
                     break;
                 case 'favorites':
-                    this.currentCollection = this.favorites;
+                    this.searchResults = this.favorites;
                     break;
             }
         },
@@ -63,7 +63,7 @@ const app = Vue.createApp({
                         this.searching = false;
 
                         // redirect to store page
-                        this.display('store')
+                        this.display('home')
                     })
             }
         },

@@ -10,6 +10,14 @@ app.component('MovieDetails', {
                 </div>
                 <div class="text-left col-details col-sm-8">
                     <dl>
+                        <template v-if="item.attributes.description">
+                            <dt>Description</dt>
+                            <dd>{{item.attributes.description}}</dd>
+                        </template>
+                        <template v-if="item.attributes.startDate">
+                            <dt>Release Date</dt>
+                            <dd>{{item.attributes.startDate}}</dd>
+                        </template>
                         <template v-if="item.attributes.ratingRank">
                             <dt>Rating Rank</dt>
                             <dd>{{item.attributes.ratingRank}}</dd>

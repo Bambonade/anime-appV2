@@ -39,6 +39,7 @@ class Show {
             music: '',
             special: '',
         },
+        description: '',
     }
 
     get thumbnail(){

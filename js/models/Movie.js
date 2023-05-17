@@ -39,6 +39,7 @@ class Movie {
             music: '',
             special: '',
         },
+        description: '',
     }
 
     get thumbnail(){

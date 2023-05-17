@@ -22,7 +22,11 @@ app.component('ShowListItem', {
             return this.bookmarks.contains(this.item);
         },
         detailsComponent(){
-            return this.item.type + 'Details';
+            if(this.item.attributes.showType === 'TV' || this.item.attributes.showType === 'ONA' || this.item.attributes.showType === 'OVA' || this.item.attributes.showType === 'Special'){
+                console.log(this.item.attributes.showType + 'SHOW');
+                return 'ShowDetails';
+            }
+            return this.item.attributes.showType + 'Details';
         }
     },
 
@@ -65,9 +69,8 @@ app.component('ShowListItem', {
                 </div>
             </div>
             
-            <bs-modal v-model="showDetails" :title="item.attributes.titles.en" hide-footer>
+            <bs-modal v-model="showDetails" :title="item.attributes.titles.en_jp" hide-footer>
                 <component :is="detailsComponent" :item="item"></component>
-                Details coming soon!
             </bs-modal>
         </div>
     `,
